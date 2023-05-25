@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    width: 100%;
+    padding: 200px 0;
+}
+
+section .inner {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+section .inner::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+section article {
+    width: 200px;
+    height: 200px;
+    /* transition: 1s; */
+    float: left;
+    margin-right: 20px;
+}
+
+section article:last-of-type {
+    margin-right: 0px;
+}
+
+section article .pic {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+section article .pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section article:nth-of-type(2) .pic {
+    clip-path: polygon(50% 0%, 100% 0, 100% 33%, 100% 66%, 100% 100%, 50% 100%, 0 100%, 0 66%, 0 33%, 0 0);
+}
+
+section article:nth-of-type(2):hover .pic {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+section article:nth-of-type(3) .pic {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+section article:nth-of-type(3):hover .pic {
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+section article:nth-of-type(4) .pic {
+    clip-path: circle(70.7% at 50% 50%);
+}
+
+section article:nth-of-type(4):hover .pic {
+    clip-path: circle(30% at 50% 50%);
+}
+
+/* 점의 개수가 같아야 transition이 적용된다 */
